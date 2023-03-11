@@ -57,6 +57,10 @@
     image: "{{ gitlab_runner_container_image }}:{{ gitlab_runner_container_tag }}"
     restart_policy: "{{ gitlab_runner_container_restart_policy }}"
     mounts:
+    # - type: bind
+    #   source: /etc/hosts
+    #   target: /etc/hosts
+    #   read_only: true
     - type: bind
       source: "{{ gitlab_runner_container_mount_path }}"
       target: /etc/gitlab-runner
